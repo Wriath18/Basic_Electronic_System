@@ -1,7 +1,7 @@
-import csv #comma seperated values
+import csv 
 
 def write_stock():
-    with open("stock.csv", "w", newline='') as file: #newline means enter kr diya
+    with open("stock.csv", "w", newline='') as file: 
         writer = csv.writer(file)
         writer.writerow(["Product", "Quantity", "Price"])
 
@@ -58,7 +58,7 @@ def add_sales():
         return
 
     price = 0
-    with open('stock.csv', 'r') as file: #openned stock csv file in read mode
+    with open('stock.csv', 'r') as file:
         reader = csv.reader(file)
         for i in reader:
             if i[0] == product:
@@ -67,7 +67,7 @@ def add_sales():
 
     total_price = price * quantity
 
-    with open("sales.csv", "a", newline="") as file: #a means append which means ki last me neter kra h
+    with open("sales.csv", "a", newline="") as file: 
         writer = csv.writer(file)
         writer.writerow([product, quantity, price, customer, total_price])
     print("Sale recorded successfully!")
